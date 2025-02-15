@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SecuritySystem</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <style>
+        /* [Previous base styles remain the same] */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .language-switcher {
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid #e5e7eb;
+            margin-right: 1rem;
+        }
+
+        .hero {
+            background-color: #2563eb;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button-white {
+            background-color: white;
+            color: #2563eb;
+        }
+
+        .button-white:hover {
+            background-color: #f8fafc;
+        }
+
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1f2937;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .mobile-menu-button {
+            display: none;
+            font-size: 1.5rem;
+            color: #4b5563;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .language-switcher {
+    margin-right: 1rem;
+}
+
+.language-link {
+    color: #4b5563;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.language-link:hover {
+    color: #2563eb;
+}
+/* Existing styles remain the same, then add/update these responsive styles */
+
+@media screen and (max-width: 768px) {
+    /* Header modifications */
+    .header-content {
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        gap: 1rem;
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    /* Features grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /* Contact page specific */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    /* Footer adjustments */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Language switcher */
+    .language-switcher {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+}
+        /* Updated styles for About page */
+        .about-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+        }
+
+        .about-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .profile-section {
+            padding: 4rem 0;
+            background-color: #f8fafc;
+        }
+
+        .profile-container {
+            max-width: 788px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text h2 {
+                font-size: 2rem;
+            }
+            
+            .profile-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    🛡️ SecuritySystem
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="photos.html">Photos</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <a href="about.html" class="language-link">English</a> | 
+                    <a href="about_gr.html" class="language-link">Ελληνικά</a>
+                </div>
+                <button class="mobile-menu-button">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>About SecuritySystem</h1>
+            <p>Professional security solutions tailored to your needs</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>My Commitment to Your Security</h2>
+                    <p>Since 2010, I've dedicated myself to providing top-tier security solutions for homes and businesses across the country. With over a decade of experience in the security industry, I personally oversee every installation to ensure the highest standards of protection for my clients.</p>
+                    <p>My approach combines cutting-edge technology with personalized service, ensuring that each security solution is perfectly tailored to meet your specific needs. I believe in building lasting relationships with my clients, providing ongoing support and maintenance to keep your security systems operating at peak performance.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/aboutpic_02.png" alt="SecuritySystem Installation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <img src="images/aboutpic_01.png" alt="Security Professional" class="profile-image">
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SecuritySystem</h3>
+                    <p>Your reliable partner in security solutions since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect with us</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SecuritySystem. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
